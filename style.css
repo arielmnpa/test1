@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+}
+
+/* CSS untuk Logo */
+.logo {
+    position: fixed; /* Membuat logo tetap di atas */
+    top: 20px; /* Jarak dari bagian atas */
+    left: 30px; /* Jarak dari sisi kiri */
+    z-index: 1001; /* Pastikan logo di atas navbar */
+}
+
+.logo img {
+    width: 130px; /* Atur ukuran logo sesuai kebutuhan */
+    height: auto; /* Menjaga proporsi gambar */
+}
+
+/* CSS untuk Navbar */
+.navbar {
+    position: fixed; /* Navbar tetap di atas saat scroll */
+    top: 0; /* Posisi di bagian atas */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang transparan */
+    color: white; /* Warna teks */
+
+    padding: 28px 20px; /* Padding untuk navbar */
+    transition: top 0.3s; /* Transisi untuk efek muncul */
+    z-index: 1000; /* Pastikan navbar di atas elemen lainnya */
+    
+    display: flex; /* Menggunakan flexbox untuk pengaturan elemen */
+    justify-content: space-between; /* Memisahkan logo dan menu */
+    align-items: center; /* Vertikal center */
+}
+
+/* Menghilangkan navbar saat di-scroll */
+.navbar.hidden {
+    top: -100px; /* Menyembunyikan navbar di luar pandangan */
+}
+
+/* Mengatur jarak antara logo dan menu */
+.navbar .logo {
+    margin-right: 50px; /* Jarak antara logo dan menu */
+}
+
+/* Mengatur ul di dalam navbar */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Memindahkan item ke kanan */
+    margin: 0;
+    padding: 0;
+    margin-left: 50px; /* Jarak tambahan antara logo dan menu */
+    flex-grow: 1; /* Memperluas ul agar memenuhi ruang antara logo dan teks */
+}
+
+.navbar ul li {
+    margin-left: 32px;
+}
+
+.navbar ul li a {
+    font-size: 19px; /* Ukuran teks di menu navbar */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/* CSS untuk Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 838px; /* Atur tinggi sesuai keinginan */
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menjaga proporsi gambar */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Agar gambar berada di belakang konten */
+}
+
+.banner-content {
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    transform: translate(0, -50%);
+    color: white;
+    text-align: left;
+    z-index: 1;
+    max-width: 45%; /* Membatasi lebar teks agar tidak terlalu panjang */
+    font-size: 2rem; /* Ukuran font default */
+    line-height: 1.2; /* Mengatur jarak antar baris */
+}
+
+@media screen and (max-width: 768px) {
+    .banner-content {
+        font-size: 1.5rem; /* Mengecilkan teks untuk layar lebih kecil */
+        max-width: 80%; /* Lebar teks lebih besar di layar kecil */
+    }
+}
+
+
+.banner-content .small-text {
+    font-size: 1.2rem; /* Ukuran lebih kecil untuk teks */
+    color: #f0f0f0; /* Warna teks kecil */
+    opacity: 0.8; /* Memberi efek sedikit transparan pada teks kecil */
+    margin-top: 15px;
+    margin-bottom: 20px; /* Jarak di bawah teks kecil */
+}
+
+
+.banner-content .btn {
+    padding: 10px 20px;
+    background-color: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+/* Movie Row Section */
+.movie-rows {
+    padding: 50px;
+    background-color: #141414;
+    margin-top: 80px;
+}
+
+.row {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.movie-item {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.movie-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* Mengatur ukuran logo dengan CSS */
+.logo img {
+    width: 150px; /* Mengatur lebar logo */
+    height: auto; /* Menjaga proporsi gambar */
+}
+
+
+/* CSS untuk Movie Item */
+.movie-item {
+    position: relative; /* Pastikan elemen berada dalam posisi relatif */
+    margin: 10px; /* Memberikan jarak antar item */
+    width: 250px; /* Atur lebar tetap untuk setiap item */
+    height: 150px; /* Atur tinggi tetap untuk setiap item */
+    overflow: hidden; /* Menghindari konten keluar dari batas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan transisi pada transformasi dan bayangan */
+}
+
+
+
+
+/* Mengatur gambar dalam movie item */
+.movie-item img {
+    width: 100%; /* Mengatur gambar agar memenuhi lebar item */
+    height: 100%; /* Mengatur gambar agar memenuhi tinggi item */
+    object-fit: cover; /* Menjaga proporsi gambar agar tidak terdistorsi */
+    border-radius: 1px; /* Memberikan sudut melengkung pada gambar */
+}
+
+@media only screen and (max-width: 768px) {
+    /* CSS untuk layar dengan lebar maksimum 768px (tablet atau ponsel) */
+}
+
+@media screen and (max-width: 1024px) {
+    .banner-content {
+        font-size: 1.8rem;
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .banner-content {
+        font-size: 1.2rem;
+        max-width: 80%;
+        top: 40%; /* Posisi teks diturunkan pada layar kecil */
+    }
+}
+
+/* Add this to your CSS */
+.navbar.visible {
+    top: 0; /* Navbar will be shown */
+}
+
+.row {
+    display: flex;
+    width: 100%; /* Sesuaikan lebar sesuai kebutuhan */
+}
+
+.movie-item {
+    width: 300px; /* Atur lebar item sesuai dengan jumlah gambar yang diinginkan */
+    margin: 2px;
+}
+
+/* Efek timbul dan bayangan pada movie item */
+.movie-item:hover {
+    transform: scale(1.2); /* Memperbesar ukuran item saat hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Bayangan lebih besar untuk efek timbul */
+    z-index: 2; /* Membuat item yang dibesarkan berada di atas elemen lainnya */
+}
+
+/* Menambahkan transisi halus saat item dibesarkan */
+.movie-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi halus untuk perubahan ukuran dan bayangan */
+}
